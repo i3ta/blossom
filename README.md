@@ -1,4 +1,4 @@
-# Blossom-dft
+# Blossom
 
 ## Overview
 
