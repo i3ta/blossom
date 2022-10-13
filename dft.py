@@ -5,6 +5,7 @@ import math
 
 def dft(x):
     N = len(x)
+    print(N)
     X = []
     for k in range(N):
         re = 0
@@ -13,15 +14,17 @@ def dft(x):
             phi = (2 * math.pi * k * n) / N
             re += x[n] * math.cos(phi)
             im -= x[n] * math.sin(phi)
-        re = re / N
-        im = im / N
+
+        re /= N
+        im /= N
 
         freq = k
         amp = math.sqrt(re * re + im * im)
         phase = math.atan2(im, re)
 
         X.append((freq, amp, phase))
+
     return X
 
 if __name__ == '__main__':
-    dft([100, 100, 100, -100, -100, -100, 100, 100, 100, -100, -100, -100, 100, 100, 100, -100, -100])
+    print(dft([10, 10, 10, -10, -10, -10, 10, 10, 10, -10, -10, -10]))
